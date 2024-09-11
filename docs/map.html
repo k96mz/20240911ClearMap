@@ -11,15 +11,15 @@
     <link rel="stylesheet" href="./maplibre-gl@4.7.0/maplibre-gl.css" />
     <script src="./maplibre-gl@4.7.0/maplibre-gl.js"></script>
     <link
-      href="./watergis/maplibre-gl-export@3.8.3/maplibre-gl-export.css"
+      href="https://cdn.jsdelivr.net/npm/@watergis/maplibre-gl-export@3.8.3/dist/maplibre-gl-export.css"
       rel="stylesheet"
     />
-    <script src="./watergis/maplibre-gl-export@3.8.3/maplibre-gl-export.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@watergis/maplibre-gl-export@3.8.3/dist/maplibre-gl-export.umd.js"></script>
     <link
-      href="./watergis/maplibre-gl-legend@2.0.5/maplibre-gl-legend.css"
+      href="https://www.unpkg.com/@watergis/maplibre-gl-legend@latest/dist/maplibre-gl-legend.css"
       rel="stylesheet"
     />
-    <script src="./watergis/maplibre-gl-legend@2.0.5/maplibre-gl-legend.js"></script>
+    <script src="https://www.unpkg.com/@watergis/maplibre-gl-legend@latest/dist/maplibre-gl-legend.umd.js"></script>
     <style>
       body {
         margin: 0;
@@ -50,12 +50,12 @@
 
       //Export
       map.addControl(
-        new MaplibreExportControl({
-          PageSize: Size.A4,
-          PageOrientation: PageOrientation.Portrait,
-          Format: Format.PNG,
-          DPI: DPI[96],
-          //Crosshair: true,
+        new MaplibreExportControl.MaplibreExportControl({
+          PageSize: MaplibreExportControl.Size.A4,
+          PageOrientation: MaplibreExportControl.PageOrientation.Landscape,
+          Format: MaplibreExportControl.Format.PNG,
+          DPI: MaplibreExportControl.DPI[300],
+          Crosshair: true,
           PrintableArea: true,
           Local: "en",
         }),
@@ -64,12 +64,12 @@
 
       //legend
       map.addControl(
-        new MaplibreLegendControl(
+        new MaplibreLegendControl.MaplibreLegendControl(
           {},
           {
             showDefault: false,
             onlyRendered: true,
-            reverseOrder: false,
+            reverseOrder: true,
           }
         ),
         "bottom-left"
