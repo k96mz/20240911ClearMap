@@ -10,10 +10,10 @@ layout:
   text-size: 12
   text-anchor: center
   text-letter-spacing: 0.3
-  text-field: '{_name1}'
+  text-field: "{_name1}"
   text-allow-overlap: true
   text-optional: true
 paint:
-  text-color: '#6094BF'
+  text-color: "#6094BF"
   text-halo-color: rgba(206,228,242,0.5)
   text-halo-width: 0.866667
